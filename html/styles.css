@@ -1,0 +1,17 @@
+
+
+h1.Green{
+    color:green;
+}
+
+h1#TitleCursive{
+    font-style: italic;
+}
+
+h2.Red{
+    color:red;
+}
+
+h3{
+    color:blue;
+}
