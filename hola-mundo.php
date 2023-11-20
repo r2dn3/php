@@ -4,7 +4,11 @@
     </head>
     <body>
         <?php 
-            echo 'Hola mundo!';
+
+        function holaMundo(){
+                echo 'Hola mundo! Esto ha sido importado desde hola-mundo.php con include <br>';
+        }    
+
         ?>
     </body>
 </html>
