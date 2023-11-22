@@ -14,7 +14,7 @@
 </head>
 <body>
     <?php
-        function primera_pagina(){
+        function primeraPagina(){
             //Diferencias entre echo y print:
             echo "Primera página Pildoras Informaticas <br>";
             print "Esto es un Print en vez de un echo<br><br>";
@@ -54,7 +54,7 @@
             
         };
 
-        function flujo_ejecucion($nombre) {
+        function flujoEjecucion($nombre) {
             echo "Este es el primer mensaje <br>";
             //curioso que puedo hacer una funcion dentro de otra, y llamarla
             //desde fuera de la funcion
@@ -78,7 +78,7 @@
             include ("hola-mundo.php");
 
             //ejemplo de uso de la funcion de hola-mundo.php
-            hola_mundo();
+            holaMundo();
 
             //require = instrucción para indicar que nuestro programa
             // NECESITA la importación indicada
@@ -94,7 +94,7 @@
 
 
         
-        function ambitos_variables(){
+        function ambitosVariables(){
             //Tres ámbitos fundamentales:
             //Local: Declarada dentro de una función, funciona solo dentro
             //de la funcion
@@ -134,10 +134,10 @@
         //función)
         //echo $variable_global;
 
-        function variables_estaticas() {
+        function variablesEstaticas() {
 
             /*En el ejemplo explica que, de no ser static el $contador de
-            la funcion incrementa_variable(), al llamarla varias veces
+            la funcion incrementaVariable(), al llamarla varias veces
             se resetearía el valor de la misma vada vez que se llama,
             indicando:
             1
@@ -156,7 +156,7 @@
             En esencia: Cuando quieres que una variable conserve
             su valor al salir de su ámbito (de su función en este
             caso), la declaras como estática*/
-            function incrementa_variable(){
+            function incrementaVariable(){
 
                 static $contador = 0;
                 $contador++;
@@ -164,10 +164,10 @@
 
             }
 
-            incrementa_variable();
-            incrementa_variable();
-            incrementa_variable();
-            incrementa_variable();
+            incrementaVariable();
+            incrementaVariable();
+            incrementaVariable();
+            incrementaVariable();
         }
 
 
@@ -224,7 +224,7 @@
 
 
 
-        function operadores_comparacion(){
+        function operadoresComparacion(){
 
             /*
 
@@ -279,14 +279,14 @@
 
 
 
-        //primera_pagina();
+        //primeraPagina();
         //variables();
-        //flujo_ejecucion("\$nombre");
+        //flujoEjecucion("\$nombre");
         //puedo llamar a mensaje_interno(); desde aquí, curioso
-        //ambitos_variables();
-        //variables_estaticas();
+        //ambitosVariables();
+        //variablesEstaticas();
         //strings();
-        //operadores_comparacion();
+        //operadoresComparacion();
         constantes();
 
     ?>

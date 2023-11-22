@@ -5,7 +5,7 @@
     <body>
         <?php 
 
-        function hola_mundo(){
+        function holaMundo(){
                 echo 'Hola mundo! Esto ha sido importado desde hola-mundo.php con include <br>';
         }    
 
