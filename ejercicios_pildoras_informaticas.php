@@ -58,7 +58,7 @@
             echo "Este es el primer mensaje <br>";
             //curioso que puedo hacer una funcion dentro de otra, y llamarla
             //desde fuera de la funcion
-            function mensaje_interno(){
+            function mensajeInterno(){
                 echo "Mensaje interno de la función<br>";
             }
 
@@ -66,7 +66,7 @@
 
             echo "Procedo a llamar a la función a pesar de que la funcion
             se encuentra anterior al segundo mensaje<br>";
-            mensaje_interno();
+            mensajeInterno();
 
             echo "Y por eso las funciones rompen el flujo del programa <br>";
 
@@ -282,7 +282,7 @@
         //primeraPagina();
         //variables();
         //flujoEjecucion("\$nombre");
-        //puedo llamar a mensaje_interno(); desde aquí, curioso
+        //puedo llamar a mensajeInterno(); desde aquí, curioso
         //ambitosVariables();
         //variablesEstaticas();
         //strings();
