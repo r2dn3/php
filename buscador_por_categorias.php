@@ -14,14 +14,14 @@
 
     //El array lo he cogido practicamente tal y como lo ha puesto
     //el profe
-    $array = array(
-    0 => array( 'categoria' => 33, 'nombre' => 'Zapatos Roja' ),
-    1 => array( 'categoria' => 24, 'nombre' => 'Pantalones Azul' ),
-    2 => array( 'categoria' => 33, 'nombre' => 'Zapatos Verde' ),
-    3 => array( 'categoria' => 23, 'nombre' => 'Camiseta Roja' ),
-    4 => array( 'categoria' => 25, 'nombre' => 'Corbata Azul' ),
+    $array = [
+    0 => [ 'categoria' => 33, 'nombre' => 'Zapatos Roja' ],
+    1 => [ 'categoria' => 24, 'nombre' => 'Pantalones Azul' ],
+    2 => [ 'categoria' => 33, 'nombre' => 'Zapatos Verde' ],
+    3 => [ 'categoria' => 23, 'nombre' => 'Camiseta Roja' ],
+    4 => [ 'categoria' => 25, 'nombre' => 'Corbata Azul' ],
 
-    );
+    ];
 
     //con el foreach recorremos el array asignando a $productos
     //el valor contenido en cada posición del array
