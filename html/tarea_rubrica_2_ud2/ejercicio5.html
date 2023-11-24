@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        //Recogo el número a usar
+        var numerosDNI = prompt("Introduzca los números para calcular la letra del DNI");
+        //Establezco la array de letras de DNI
+        var letrasDNI = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+
+        //Verifico que sea un número Y que cumpla con los requisitos para ser numeros de DNI
+
+
+        if(numerosDNI>=0 && numerosDNI <= 99999999){
+            //Calculo el índice (-1 porque tendrá que indicar una posición en la array despues)
+            var letraDNINum = (numerosDNI % 23);
+            
+            //Muestro la letra correspondiente al número
+            alert("Su letra del DNI es: " + letrasDNI[letraDNINum]);
+        }
+
+
+
+    </script>
+</body>
+</html>

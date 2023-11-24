@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table style="margin-left: 50%; margin-top:25%; background-color: aquamarine;">
+
+        <tr>
+            <td>Introduzca una cadena de texto</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="textbox" id="textbox"></td>
+            <td><button name="button_submit" id="button_submit">submit</button></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><button name="button_cancel" id="button_cancel">Cancel</button></td>
+        </tr>
+    </table>
+
+    
+    <script type="text/javascript">
+
+        //Establezco la variable cont para ir agregando las cadenas de texto
+        var  cont = "";
+
+        //Establezco la funcion aggText para ir llamándola cada vez que se pulse el botón submit
+        function aggText(){
+            
+            //Se agrega la cadena de texto de la caja de texto y un guión como se pide
+            cont += "-" + document.getElementById('textbox').value;
+
+            //Se reestablece el valor de la caja de texto para poder volver a usarla
+            document.getElementById('textbox').value='';
+
+        }
+
+
+
+        //Al pulsar el botón, se llama a la funcioón y se agrega el texto que haya en la caja de texto
+        document.getElementById('button_submit').addEventListener("click", function(){
+            aggText();
+        });
+
+
+        //Al pulsar en el botón cancelar, se establece una nueva string quitándole el primer valor (para que el primer guión desaparezca)
+        // y se muestra dicha string por pantalla, además de reestablecer el valor de cont
+        document.getElementById('button_cancel').addEventListener("click", function() {
+            var string = cont.substring(1);
+            alert("Su cadena de texto es: " + string);
+            cont="";
+        });
+
+
+    </script>
+</body>
+</html>
