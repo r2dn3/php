@@ -14,9 +14,10 @@
         var letrasDNI = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
 
         //Verifico que sea un número Y que cumpla con los requisitos para ser numeros de DNI
-
-
-        if(numerosDNI>=0 && numerosDNI <= 99999999){
+        if(isNaN(numerosDNI)){
+            alert("Por favor introduzca números validos");
+        }
+        else if(numerosDNI>=0 && numerosDNI <= 99999999){
             //Calculo el índice (-1 porque tendrá que indicar una posición en la array despues)
             var letraDNINum = (numerosDNI % 23);
             
