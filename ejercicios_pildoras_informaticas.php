@@ -279,6 +279,206 @@
 
 
 
+        function operacionesMatematicas() {
+
+            //Con este echo creo el formulario:
+            
+            /*
+            echo "
+            <form name=\"form1\" method=\"post\" action=\"\">
+    
+                <p>&nbsp;</p>
+                <p>
+                    <label for=\"num1\"></label>
+                    <input type=\"tex\" name=\"num1\" id=\"num1\">
+    
+                    <label for=\"num2\"></label>
+                    <input type=\"text\" name=\"num2\" id=\"num2\">
+    
+                    <label for=\"operacion\"></label>
+                    <select name=\"operacion\" id=\"operacion\">
+    
+                        <option>Suma</option>
+                        <option>Resta</option>
+                        <option>Multiplicación</option>
+                        <option>División</option>
+                        <option>Módulo</option>
+    
+                    </select>
+                </p>
+    
+                <p>
+                    <input type=\"submit\" name=\"botonOperaciones\" id=\"botonOperaciones\" value=\"Enviar\" onclick=\"prueba\">
+                </p>
+            </form>";
+            */
+
+            
+
+            function calcular($numero1, $numero2, $operacion){
+
+                $resultado = 0;
+
+                //con este simple switch elegimos ejecutar un bloque de código en base a lo que
+                //ponga en el <select> del formulario
+
+                switch ($operacion) {
+
+                    case 'Suma':
+                        $resultado = $numero1 + $numero2;
+                        break;
+                    
+                    case 'Resta':
+                        $resultado = $numero1 - $numero2;
+                        break;
+
+                    case 'División':
+                        $resultado = $numero1 / $numero2;
+                        break;
+
+                    case 'Multiplicación':
+                        $resultado = $numero1 * $numero2;
+                        break;
+
+                    case 'Módulo':
+                        $resultado = $numero1 % $numero2;
+                        break;
+                    
+                    default:
+                        # code...
+                        break;
+                }
+
+                echo "El resultado es: " . $resultado;
+            }
+
+
+            //este if hace que solo se realice este bloque de código si se ha pulsado en el botón del form
+            if(isset($_POST["botonOperaciones"])){
+
+                //con $_POST["num1"] asignamos a la variable $numero1 el valor que haya en la caja
+                //de texto llamada "num1"
+                $num1 = $_POST["num1"];
+                $num2 = $_POST["num2"];
+                $op = $_POST["operacion"];
+
+                //llamamos a la función calcular pasandole los parámetros necesarios
+                calcular($num1, $num2, $op);
+
+
+                //esta funcion es llamada desde el archivo calculadora.html
+            }   
+        
+        }
+
+
+        function fucnionesMatematicas(){
+
+            //Creación de variable que contiene un número aleatorio siempre
+            $numRand = rand(10, 50);
+
+            //Creación de variable que contiene 2 elevado a 2
+            $numPow = pow(2,2);
+
+            //Variable decimal con muchos números despues de la coma para redondear en el echo 
+            $numRound = 5.63456732;
+
+            echo "5.63456732 redondeado con precision de 2: " . round($numRound, 2) . "<br>";
+
+            //casting implicito:
+            $stringNum = "5";
+            //Al sumarle 1, no solo se convierte en 6 sino que pasa de string a int
+            $stringNum+=1;
+            //Al sumarle 0.5, se convierte de int a float
+            $stringNum+=0.5;
+
+            //Casting explícito:
+            //Este número es un string
+            $castNum = "5";
+
+            //De esta manera, casteamos la string $castNum a int y en $numCasted hay un int
+            $numCasted = (int) $castNum;
+
+
+
+        }
+
+
+        function condicionalesI(){
+            
+            /*
+            $var1 = true;
+            $var2 = false;
+
+            //&& vs AND, && tiene mas prioridad que = pero AND tiene menos, por lo que
+            //si ponemos && sera false, porque se evalua var1 Y var2, pero si dejamos el
+            //AND será true, porque se asignará $var1
+            $resultado = $var1 && $var2;
+
+            if ($resultado) {
+                echo "Correcto";
+            }else{
+                echo "Incorrecto";
+            }
+            */
+
+            
+
+            //página y programa simple para ver el condicional ELSE IF
+            echo "   
+            <h1 align='center'> USANDO CONDICIONALES</h1>
+            <form action='' method='post' name='datos_usuario' id='datos_usuario'>
+                <table width='15%' align='center'>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td>
+                            <label for='nombre_usuario'></label>
+                            <input type='text' name='nombre_usuario' id='nombre_usuario'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Edad:</td>
+                        <td>
+                            <label for='edad_usuario'></label>
+                            <input type='text' name='edad_usuario' id='edad_usuario'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan='2' align='center'>
+                            <input type='submit' name='enviando' id='enviando' value='Enviar'>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            ";
+
+
+            if (isset($_POST["enviando"])) {
+                
+                $edad = $_POST["edad_usuario"];
+                $nombre = $_POST["nombre_usuario"];
+
+                if($edad<=18){
+                    echo "<p align='center'>Su nombre es $nombre y usted es joven</p>";
+                }else if($edad<=25){
+                    echo "<p align='center'>Su nombre es $nombre y usted es maduro</p>";
+                }else if($edad<=60){
+                    echo "<p align='center'>Su nombre es $nombre y usted es viejo</p>";
+
+                }else{
+                    echo "<p align='center'>Su nombre es $nombre y usted es debería cuidarse</p>";
+                }
+
+
+            }
+        }
+
+
+
         //primeraPagina();
         //variables();
         //flujoEjecucion("\$nombre");
@@ -287,7 +487,11 @@
         //variablesEstaticas();
         //strings();
         //operadoresComparacion();
-        constantes();
+        //constantes();
+        //operacionesMatematicas();
+        //fucnionesMatematicas();
+        condicionalesI();
+
 
     ?>
 </body>
