@@ -478,6 +478,86 @@
         }
 
 
+        function operadorTernario(){
+
+            //primero establezco la ocondicion
+            $condition = true;
+            $age = 18;
+
+            //Si condition es true, muestra "this is true". Si es falsa, muestra "This is false"
+            $result = $condition && $age>=18 ? "this is true and you're old" : "This is false";
+            echo $result;
+            //echo $condition ? "this is true" : "This is false";
+
+
+
+        }
+
+
+        function switchCase(){
+
+            //Ejemplo simple de switch case con dos condiciones
+
+
+            $varArr = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+            $clima = 'Rainy';
+
+            $diaSemana = $varArr[0];
+
+            switch (true) {
+
+                //se puede poner más de una condición aqui si usas true en el switch case
+                //dado que lo que verifica es que sea true
+                case $diaSemana == 'Lunes' && $clima == "Rainy":
+                    echo"Hoy es un día de entre semana y  esta lluvioso";
+
+                    break;
+         
+                case $diaSemana == 'Martes' && $clima == "Rainy":
+                    echo"Hoy es un día de entre semana";
+                    
+                    break;
+                
+                case $diaSemana == 'Miércoles':
+                    echo"Hoy es un día de entre semana";
+
+                    break;
+
+                case $diaSemana == 'Jueves':
+                    echo"Hoy es un día de entre semana";
+
+                    break;
+
+                case $diaSemana == 'Viernes':
+                    echo"Hoy es un día de entre semana";
+
+                    break;
+
+                case $diaSemana == 'Sábado':
+                    echo"Hoy es un día de finde";
+
+                    break;
+
+                case $diaSemana == 'Domingo':
+                    echo"Hoy es un día de finde";
+
+                    break;
+
+                default:
+                    echo"dafuq";
+                    break;
+            }
+
+        }
+
+
+        
+
+
+
+
+        //Lo que se envía con el POST es el name!
 
         //primeraPagina();
         //variables();
@@ -490,7 +570,10 @@
         //constantes();
         //operacionesMatematicas();
         //fucnionesMatematicas();
-        condicionalesI();
+        //condicionalesI();
+        //operadorTernario();
+        //switchCase();
+
 
 
     ?>
