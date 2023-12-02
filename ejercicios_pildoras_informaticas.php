@@ -552,7 +552,37 @@
         }
 
 
-        
+
+        function bucles(){
+
+            //tal y como comenta Juan de pildoras informáticas, la sintáxis es exactamente la misma que en
+            //java
+            //ejemplo simple de while
+            $varArr = ["azul", "rojo", "verde", "amarillo"];
+            $i = 0;
+            $n = 0;
+            while ($i < count($varArr)){
+                echo "<p>" . $varArr[$i] . "</p>";
+                $i++;
+            }
+            //ejemplo simple de do while
+            do{
+                echo "<p>" . $varArr[$n] . "</p>";
+                $n++;
+            }while($n < count($varArr));
+
+            //ejemplo simple de for
+            for ($j = 1; $j < count($varArr); $j++){
+                echo "<p>" . $varArr[$j] . "</p>";
+            }
+
+            //ejemplo simple de foreach
+            foreach ($varArr as $color){
+                echo "<p>" . $color . "</p>";
+            }
+
+            //efectivamente, funcionan exactamente igual
+        }
 
 
 
@@ -573,7 +603,8 @@
         //condicionalesI();
         //operadorTernario();
         //switchCase();
-
+        //bucles();
+        
 
 
 
