@@ -75,7 +75,7 @@
 
             //include = instruccion para importar otros paquetes o archivos 
             //php para usar sus funciones
-            include ("hola-mundo.php");
+            include("hola-mundo.php");
 
             //ejemplo de uso de la funcion de hola-mundo.php
             holaMundo();
@@ -243,7 +243,7 @@
             //  #Lo que sea que haga tu if si pulsan el boton de enviado    
             //}
 
-            //Hacer referencia a trabajo_operadores.php del video 9 
+            //Hacer referencia a trabajo_operadores.html del video 9
             //del curso de Pildoras Informaticas
         }
 
