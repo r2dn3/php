@@ -585,6 +585,89 @@
         }
 
 
+        function funcionesPredefinidas(){
+
+            //vamos a usar las siguientes funciones predefinidas:
+            //strtolower, strtoupper, ucwords
+
+            $sentence = "Frase de prueba para funciones predefinidas";
+
+            echo strtolower($sentence) . " (minuscula) <br>";
+            echo strtoupper($sentence) . " (mayuscula) <br>";
+            echo ucwords($sentence) . " (mayus la primera letra de cada palabra) <br>";
+
+            //es un simple ejemplo de como llamar y usar funciones predefinidas. También se podría almacenar
+            //el valor en una variable y mostrar/usar eso ($minus = strtolower($sentence);)
+
+
+
+            //funcion simple recibiendo un par de parámetros
+            function suma($num1, $num2){
+                $resultado = $num1 + $num2;
+                return $resultado;
+            }
+
+            //llamada a la función asignándole el resultado a una variable
+            $suma = suma(2, 2);
+            echo "El resultado de 2 + 2 es: $suma";
+        }
+
+
+        function fraseMinus($frase, $conversion = true){
+            //parametro por defecto: el parametro $conversion tiene asignado por defecto el valor true para
+            //modificar el comportamiento de la funcion
+
+
+            //FUncion sencillita que pasa una frase de todas mayus a todas minus y pone la primera letra en mayus
+            $res = strtolower($frase);
+
+
+            //por defecto entrará por aqui y lo convertirá en cada palabra tener mayus primero
+            //pero si se declara false como segundo parametro, se convertira en solo minus
+            //esto esta hecho al reves que lo que hizo Pildoras Informaticas pero es el mismo funcionamiento
+            if($conversion) {
+                $res = ucwords($res);
+            }
+
+
+            //en cualquier caso, se devuelve el resultado (haciendo echo en este caso)
+            echo $res;
+        }
+
+
+
+        function paramPorReferencia(){
+
+            //funcion sencillita para empezar el ejemplo, incrementa en 1 $valor1
+            function incrementa($valor1){
+                $valor1++;
+                return $valor1;
+            }
+            $numero = 5;
+            //efectivamente, printea 6
+            echo incrementa($numero) . "<br>";
+            //al pasarle el parametro por valor, el $numero no cambia definitivaemente de valor sino que
+            //solo es modificado al llamar la funcion
+            echo $numero . "<br>";
+
+
+            //para pasar un parámetro por referencia, se añade & delante del parámetro:
+            //&$referencia1 en este caso
+            function incrementaReference(&$referencia1){
+                $referencia1++;
+                return $referencia1;
+            }
+            $numRef = 5;
+            //al ser pasado por referencia, se crea una conexión entre la referencia ($referencia1) y el
+            //parámetro ($numRef) de tal forma que se modifica el valor de $numRef de forma definitivamente
+            //imprimira el 6 igualmente
+            echo incrementaReference($numRef) . "<br>";
+            //pero aquí tambien imprimirá 6, al ser incrementado por pasarlo por referencia
+            echo $numRef . "<br>";
+
+
+        }
+
 
 
         //Lo que se envía con el POST es el name!
@@ -604,9 +687,9 @@
         //operadorTernario();
         //switchCase();
         //bucles();
-        
-
-
+        //funcionesPredefinidas();
+        //fraseMinus("ESTA ES UNA FRASE EN MAYUSCULA PARA HACER LA PRUEBA");
+        //paramPorReferencia();
 
 
 
