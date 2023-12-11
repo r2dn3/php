@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarea rubrica 3 ejercicio 3</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td id="hours"></td>
+        <td>:</td>
+        <td id="minutes"></td>
+        <td>:</td>
+        <td id="seconds"></td>
+    </tr>
+</table>
+<script>
+
+    //Establezco las variables a utilizar.
+    let date = new Date();
+    let hour;
+    let minute;
+    let second;
+
+    //Este conjunto de ifs es solo para añadir un 0 en caso de no tener dos dígitos el número, dado que me parecía que
+    //quedaba muy vacío el reloj
+    if(date.getHours() <=9){
+        hour = "" + 0 + date.getHours();
+    }else{
+        hour = date.getHours();
+    }
+
+    if(date.getMinutes() <=9){
+        minute = ""+0+date.getMinutes();
+    }else{
+        minute = date.getMinutes();
+    }
+
+    if(date.getSeconds() <=9){
+        second = "" + 0 + date.getSeconds();
+    }else{
+        second = date.getSeconds();
+    }
+
+    //Establezco el valor (o "innerText" de las celdas de la tabla a la hora que es
+    document.getElementById("hours").innerText = hour;
+    document.getElementById("minutes").innerText = minute;
+    document.getElementById("seconds").innerText = second;
+
+    //Se repite el mismo bloque de código, pero dentro de una función que será llamada cada segundo
+    function reloj(){
+        let date = new Date();
+        let hour;
+        let minute;
+        let second;
+
+        if(date.getHours() <=9){
+            hour = "" + 0 + date.getHours();
+        }else{
+            hour = date.getHours();
+        }
+
+        if(date.getMinutes() <=9){
+            minute = ""+0+date.getMinutes();
+        }else{
+            minute = date.getMinutes();
+        }
+
+        if(date.getSeconds() <=9){
+            second = "" + 0 + date.getSeconds();
+        }else{
+            second = date.getSeconds();
+        }
+        document.getElementById("hours").innerText = hour;
+        document.getElementById("minutes").innerText = minute;
+        document.getElementById("seconds").innerText = second;
+    }
+
+    //llamamos a la función cada segundo
+    let repeat = setInterval(reloj, 1000);
+
+</script>
+</body>
+</html>

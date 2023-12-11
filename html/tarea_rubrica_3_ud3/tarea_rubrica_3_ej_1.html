@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarea con rubrica 3</title>
+</head>
+<body>
+<script>
+
+    //se establece el objeto Date para poder usar los métodos
+    const date = new Date();
+    //se establece la variable hours para conseguir la hora que es
+    const hours = date.getHours();
+
+    //con este if verificamos si la hora se encuentra entre los rangos especificados para mostrar el mensaje deseado
+    if (hours >= 6 && hours <= 11){
+        alert("Buenos días");
+    } else if (hours >= 12 && hours <= 19){
+        alert("Buenas tardes");
+    }else {
+        alert("Bueans noches");
+    }
+
+</script>
+</body>
+</html>

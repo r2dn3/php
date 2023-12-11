@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 Tarea rubrica 3</title>
+</head>
+<body>
+<script>
+
+    //Establezco en la constante date la instancia del objeto Date para usar los métodos
+    const date = new Date();
+
+    //Establezco el array de dias de la semana, el domingo va el primero porque Date.getDay() devuelve 0 si es domingo
+    let days = ["domingo", "lunes", "martes", "miercoles", "miercoles", "jueves", "viernes", "sabado"];
+    //Establezco en la variable diaSemana el día correcto usando tanto el array como el método getDay() de Date
+    let diaSemana = days[date.getDay()];
+
+    //Mismo método que con el día. Establezco los nombres de los meses en un array months
+    let months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    //Asigno a la variable mes el mes correcto invocando la posición adecuada en el array months con la funcion getMonth() de Date
+    let mes = months[date.getMonth()];
+
+    //Simplemente asigno el año, el día del mes, la hora y el minuto actual a las variables anyo, diaMes, hours y mins
+    let anyo = date.getFullYear();
+    let diaMes = date.getDate();
+    let hours = date.getHours();
+    let mins = date.getMinutes();
+
+    //Por último, escribo en el documento un <p> que contenga la frase pedida: Hoy es diaSemana, diaMes de mes de anyo y son las hours:mins horas.
+    document.write("<p>Hoy es " + diaSemana + ", " + diaMes + " de " + mes + " de " + anyo + " y son las " + hours + ":" + mins + " horas." + "</p>");
+
+</script>
+</body>
+</html>
