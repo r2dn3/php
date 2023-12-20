@@ -27,7 +27,6 @@ class ClaseBici
      */
     public function getColor()
     {
-        echo $this->color;
         return $this->color;
     }
 
