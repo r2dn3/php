@@ -24,7 +24,17 @@
     echo "El camión tiene " . $seat->getRuedas() . " ruedas <br>";
     echo $mazda->arrancar(2);
     echo $seat->arrancar(1);
-    echo $seat->girar();
+    echo $seat->girar() . "<br>";
+    
+    //al ser un método estatico me permite llamarlo sin instanciar una clase
+    Coche::claxon();
+    
+    //hago uso del método mejorarMotor(), que a su vez hace uso de la variable estatica $mejorMotor
+    echo "<br> El motor del mazda es: " . $mazda->getMotor();
+    $mazda->mejorarMotor();
+    echo "<br> El motor mejorado del mazda es: " . $mazda->getMotor();
+    
+    
 
     /*
      * Resultado de ejecutar los echos de arriba:
@@ -35,6 +45,9 @@
      * Arranco mi camión en la marcha 1
      * Estoy girando
      * Mi camión giró
+     * toco mi claxon
+     * El motor del mazda es: 1600
+     * El motor mejorado del mazda es: 2000
      *
      */
 ?>
