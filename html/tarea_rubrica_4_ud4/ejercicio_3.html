@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="busqueda">
+        <input type="button" value="buscar" id="submit">
+        <br>
+        <p id="resultado"></p>
+    </form>
+    
+    <script>
+        
+        //creo el array con las ciudades, en el enunciado especifica que es un array enorme pero para
+        //hacer pruebas sirve con cuatro o cinco ejemplos
+        cities = ["28013;Abada", "44002;Alicante", "44001;Ambeles", "16001;Armas", "16006;Angustias", "16003;Alcazar"];
+        
+        //Creamos la función para tratar los datos
+        function encontrarCiudad(){
+            
+            //Recorro el array
+            for (let i = 0; i<cities.length; i++){
+                
+                //Dentro del if transformo tanto el nombre de la ciudad como el valor del recuadro de texto, para
+                //hacer que no importe si esta en mayusculas o minusculas
+                if (cities[i].toLowerCase().includes(document.getElementById("busqueda").value.toLowerCase())){
+                    
+                    //Con las siguientes cuatro lineas divido el texto en dos cadenas, el CP y el nombre de la ciudad
+                    //primero asigno el valor de la posicion actual del array a cadena
+                    let cadena = cities[i];
+                    //asigno el valor del indice de ; a indice
+                    let indice = cadena.indexOf(";");
+                    //y recorto primero desde la posicion 0 hasta indice, y despues desde indice+1 hasta la posicion final
+                    let codigoPostal = cadena.slice(0, indice).trim();
+                    let nombreCiudad = cadena.slice(indice+1, cadena.length).trim();
+                    
+                    //Asigno a result el valor de una frase para mostrar los datos
+                    let result = "La ciudad es: " + nombreCiudad + ", y su CP: " + codigoPostal;
+                    
+                    //y le asigno dicho valor al <p> que tengo designado para mostrar el resultado
+                    document.getElementById("resultado").innerText = result;
+                    
+                    //por ultimo, salgo del bucle for
+                    break;
+                }
+                
+            }
+            
+        }
+        
+        //y aquí simplemente se llama a la función cuando se pulsa el botón "buscar"
+        document.getElementById('submit').addEventListener("click", function(){
+            //y llamo a la función
+            encontrarCiudad();
+        });
+    </script>
+</body>
+</html>

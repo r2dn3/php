@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    
+    //Creo el objeto persona, con los atributos mencionados en el ejercicio
+    function persona(nombre, edad, altura){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.altura = altura;
+    }
+    
+    //creo la instancia de dimas para realizar la frase con los atributos del mismo
+    let dimas = new persona("Dimas", 28, 185);
+    
+    //asigno a result la frase requerida usando los atributos del objeto
+    let result = "El usuario " + dimas.nombre + " tiene " + dimas.edad + " años y mide " + dimas.altura + " centímetros."
+    
+    //muestro por consola la frase resultado
+    console.log(result);
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            height: 200px;
+            position: relative;
+            border: 3px solid green;
+        }
+        
+        .container-below {
+            height: 220px;
+            position: relative;
+        }
+        
+        
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="center">
+            <input type="submit" id="cargar_ejemplo" value="Cargar Ejemplo">
+        </div>
+    </div>
+    
+    <div class="container-below">
+        <div class="center">
+            <p>Mayor:</p>
+            <p id="mayor"></p>
+            <p>Menor:</p>
+            <p id="menor"></p>
+            <p>Media:</p>
+            <p id="media"></p>
+        </div>
+    </div>
+    
+    
+    
+    <script>
+        
+        //establezco el array de valores preestablecidos aleatoriamente
+        numArray = [5,23,6,4,23,45,7,8,34,54,25,7,75];
+
+        
+        //creo la función que realizará las tareas que se piden, pasandole el array como parámetro
+        function calcularNumeros(arraynums){
+            
+            //establezco las variables que voy a necesitar
+            let mayor = 0;
+            let menor = 1000;
+            let contador = 0;
+            let total = 0;
+            let media = 0;
+            
+            //recorro el array para establecer los valores correctos en las variables
+            for (let i = 0; i < arraynums.length; i++){
+                
+                //con esta linea establezco un total para calcular la media
+                total += arraynums[i];
+                
+                //con esta linea aumento el contador en 1 para calcular la media
+                contador++;
+                
+                //con el if compruebo si la posicion actual del array es superior a la
+                //variable mayor, para establecer el número mayor del array
+                if (arraynums[i] >= mayor){
+                    mayor = arraynums[i];
+                    
+                //con el else if compruebo lo contrario, si es menor que la variable menor para establecer
+                //el valor menor
+                } else if (arraynums[i] <= menor) {
+                    menor = arraynums[i];
+                }
+                
+            }
+            
+            //calculo la media dividiendo el valor total de los valores del array por el valor recogido
+            //por el contador
+            media = total/contador;
+            
+            //y procedo a establecer los valores de los <p> que tengo designados para ello:
+            
+            //establezco el mayor
+            document.getElementById("mayor").innerText = mayor;
+            //establezco el menor
+            document.getElementById("menor").innerText = menor;
+            //y establezco la media
+            document.getElementById("media").innerText = media;
+            
+        }
+        
+        //con este bloque de código hago que se ejecute la función de arriba al pulsar el botón, pasándole
+        //el array predefinido como parámetro
+        document.getElementById('cargar_ejemplo').addEventListener("click", function(){
+            //y llamo a la función
+            calcularNumeros(numArray);
+        });
+        
+
+        
+    </script>
+    
+</body>
+</html>

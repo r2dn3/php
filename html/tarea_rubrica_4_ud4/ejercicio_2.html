@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="resultado"></p>
+    
+    <script>
+        
+        //establezclo los dos arrays con la misma longitud y un tercer array para almacenarlo
+        A = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+        B = ["Mercurio", "Venus", "Tierra", "Marte", "Jupiter"];
+        C = [];
+        
+        //recorro ambas arrays asignandoles el valor a C en el orden pedido: A[0], B[0], A[1], B[1] etc...
+        for (let i = 0; i < A.length; i++){
+            C.push(A[i]);
+            C.push(B[i]);
+        }
+        
+        //Establezco una string con la información para mostrarla por pantalla
+        let concatenado = C[0] + ", " + C[1] + ", " + C[2] + ", " + C[3] + ", " + C[4] + ", " + C[5] + ", " + C[6] + ", " + C[7] + ", " + C[8] + ", " + C[9];
+        
+        //Le asigno el valor de la string a <p> para mostrar el resultado de la concatenación en C[]
+        document.getElementById("resultado").innerText = concatenado;
+    </script>
+    
+</body>
+</html>
