@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
@@ -13,10 +12,16 @@
 
 <!--Formulario simple cuya función es mostrar el nombre captado en la cookie y devolvernos
 a process_cookie.php, donde se realizará la acción de eliminar la COOKIE-->
-<form action="./process_cookie.php" method="post">
-    <p>Tu nombre es: <?php echo $_COOKIE["nombre"]; ?></p>
-    <input type="submit" value="Borrar Cookie y Volver" name="eraseCookie">
-</form>
+<br><br>
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <form class="form-inline" action="./process_cookie.php" method="post">
+        <div class="form-group mx-sm-3 mb-2">
+            <input type="text" readonly class="form-control-plaintext" value="Hola <?php echo$_COOKIE["nombre"]?>">
+            <button type="submit" class="btn btn-danger mb-2" value="Borrar Cookie y Volver" name="eraseCookie">Borrar Cookie y Volver</button>
+        </div>
+    </form>
+</div>
+
 
 
 
