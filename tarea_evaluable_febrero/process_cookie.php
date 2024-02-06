@@ -21,5 +21,5 @@ elseif (isset($_POST["eraseCookie"])){
     session_destroy();
     header("Location: tarea_evaluable_febrero_1.php");
 }
-
+//test
 ?>
